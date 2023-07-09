@@ -1,16 +1,12 @@
-# flake8: noqa
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#load_dotenv(Path(BASE_DIR, '.env'))
-
-
 SECRET_KEY = os.getenv('SECRET_KEY', default='token')
-# SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
 
 DEBUG = os.getenv('DEBUG', default=False)
 
@@ -111,7 +107,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated', 
+        'rest_framework.permissions.IsAuthenticated',
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
